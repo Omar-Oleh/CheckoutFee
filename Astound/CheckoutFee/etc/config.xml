@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Add fee on shopping cart and checkout
+ *
+ * @category    Astound
+ * @package     Astound_CheckoutFee
+ * @author      Oleg Onoshko <o.onoshko@astoundcommerce.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <checkout>
+            <fee>
+                <module_status>1</module_status>
+                <label>Checkout Fee Amount</label>
+                <amount>20</amount>
+                <minimum_order_amount>100</minimum_order_amount>
+            </fee>
+        </checkout>
+    </default>
+</config>

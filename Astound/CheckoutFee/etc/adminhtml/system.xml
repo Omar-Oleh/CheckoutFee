@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Add fee on shopping cart and checkout
+ *
+ * @category    Astound
+ * @package     Astound_CheckoutFee
+ * @author      Oleg Onoshko <o.onoshko@astoundcommerce.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="checkout" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>Checkout Fee</label>
+            <tab>sales</tab>
+            <resource>Magento_Catalog::config_catalog</resource>
+            <group id="fee" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Checkout Fee Settings</label>
+                <field id="module_status" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="amount" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Checkout Fee Amount</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="label" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Checkout Fee Label</label>
+                </field>
+                <field id="minimum_order_amount" translate="label comment" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Minimum Order Amount To Display</label>
+                    <comment><![CDATA[Greaterthan or equal to]]></comment>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+            </group>
+
+        </section>
+
+    </system>
+</config>
